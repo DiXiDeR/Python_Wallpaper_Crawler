@@ -2,6 +2,26 @@
 
 Wallpaper Crawler is an advanced web scraping tool designed to crawl websites and download high-resolution wallpapers. It supports multiple resolutions including 4K, 2K, and FullHD. The tool is built using Python and Selenium, and it features a user-friendly GUI for easy operation.
 
+---
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+
+  - [Using `uv` Python Manager](#using-uv-python-manager)
+  - [Using Standard Python Environment](#using-standard-python-environment)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Disclaimer](#disclaimer)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+---
+
+
+
 ## Features
 
 - **User-Friendly GUI**: Simple and intuitive interface built with Tkinter.
@@ -114,7 +134,7 @@ This project is created for **educational purposes** only. The author does not t
 
 ## Contributing
 
-[CONTRIBUTING](https://github.com/DiXiDeR/Python_Wallpaper_Crawler?tab=readme-ov-file#contributing)
+[CONTRIBUTING](https://github.com/DiXiDeR/fredon_librarer?tab=readme-ov-file#contributing)
 
 We welcome contributions from the community! If you would like to contribute to this project, please follow these steps:
 
@@ -124,17 +144,17 @@ We welcome contributions from the community! If you would like to contribute to 
 4. Push your changes to your forked repository: `bash git push origin feature-name `
 5. Open a pull request on the main repository and provide a detailed description of your changes.
 
-Please read the [CONTRIBUTING.md](https://github.com/DiXiDeR/Python_Wallpaper_Crawler/blob/master/CONTRIBUTING.md) for more detailed guidelines on how to contribute to this project.
+Please read the [CONTRIBUTING.md](https://github.com/DiXiDeR/fredon_librarer/blob/master/CONTRIBUTING.md) for more detailed guidelines on how to contribute to this project.
 
 ## License
 
-[LICENSE](https://github.com/DiXiDeR/Python_Wallpaper_Crawler?tab=readme-ov-file#license)
+[LICENSE](https://github.com/DiXiDeR/fredon_librarer?tab=readme-ov-file#license)
 
 This project is licensed under the MIT License. You are free to use, modify, and distribute this software under the terms of the MIT License. See the [LICENSE](https://github.com/DiXiDeR/fredon_librarer/blob/master/LICENSE) file for more details.
 
 ## Contact
 
-[CONTACT](https://github.com/DiXiDeR/Python_Wallpaper_Crawler?tab=readme-ov-file#contact)
+[CONTACT](https://github.com/DiXiDeR/fredon_librarer?tab=readme-ov-file#contact)
 
 If you have any questions, suggestions, or feedback, please feel free to open an issue on GitHub or contact the maintainer at [onlyfredon@proton.me](mailto:onlyfredon@proton.me). We appreciate your input and look forward to improving Fredon Optimizer with your help.
 
