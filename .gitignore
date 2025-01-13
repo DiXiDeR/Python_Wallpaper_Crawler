@@ -1,0 +1,32 @@
+# Python-generated files
+
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+
+# Files
+
+.optignore
+.python-version
+proxies.json
+uv.lock
+crawl_results.csv
+
+# Virtual environments
+
+.venv
+.venv/*
+
+# Folders 
+
+logs/*
+Obtained_Wallpapers/*
+output_wallpapers/
+output_wallpapers/*
+wallpaper_crawler_env/
+wallpaper_crawler_env/*
+
