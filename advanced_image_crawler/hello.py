@@ -1,5 +1,5 @@
 def main():
-    print("Hello from python-wallpaper-crawler!")
+    print("Hello from advanced-image-crawler!")
 
 
 if __name__ == "__main__":
