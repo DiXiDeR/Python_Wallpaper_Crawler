@@ -16,12 +16,11 @@ import requests
 from PIL import Image
 from io import BytesIO
 from collections import deque
-import concurrent.futures
 import threading
 import time
 from logging.handlers import RotatingFileHandler
 
-class ProxyManager:
+class ProxyManager: #TODO: proxy rotation
     def __init__(self, proxy_file='proxies.json'):
         with open(proxy_file, 'r') as f:
             self.proxy_data = json.load(f)
@@ -104,6 +103,8 @@ class WallpaperCrawler:
         log_dir = 'logs'
         os.makedirs(log_dir, exist_ok=True)
         
+        #TODO: Create robust logging, error handling
+        
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s: %(message)s',
@@ -143,6 +144,7 @@ class WallpaperCrawler:
             args=(url, resolution, depth, timeout)
         )
         self.crawl_thread.start()
+        logging.info("Crawling started")
     
     def pause_crawl(self):
         self.paused = not self.paused
@@ -150,6 +152,7 @@ class WallpaperCrawler:
             self.pause_button.config(text="Resume Crawling")
         else:
             self.pause_button.config(text="Pause Crawling")
+    logging.info("Crawling paused")
     
     def stop_crawl(self):
         self.crawling = False
@@ -157,7 +160,9 @@ class WallpaperCrawler:
         self.start_button.config(state=tk.NORMAL)
         self.pause_button.config(state=tk.DISABLED)
         self.stop_button.config(state=tk.DISABLED)
-    
+        
+        logging.info("Crawling stopped")
+        
     def perform_crawl(self, url, resolution, depth, timeout):
         try:
             # Setup user agent
@@ -235,6 +240,7 @@ class WallpaperCrawler:
             service=Service(ChromeDriverManager().install()), 
             options=options
         )
+        logging.info("Selenium WebDriver created")
         
         return driver
 
@@ -262,6 +268,7 @@ class WallpaperCrawler:
         
         width, height = dimensions
         filename = img_url.split('/')[-1].lower()
+        logging.info("Checking image dimensions")
         
         if resolution == "4K":
             return width >= 3840 and height >= 2160 or "4k" in filename
@@ -286,6 +293,7 @@ class WallpaperCrawler:
             return filename
         except Exception as e:
             self.logger.error(f"Image download error: {e}")
+            logging.error(f"Image download error: {e}")
             return None
     
     def save_results(self, urls, images):
@@ -294,6 +302,7 @@ class WallpaperCrawler:
             writer = csv.writer(file)
             writer.writerow(["Discovered URLs", "Downloaded Images"])
             writer.writerows(zip(urls, images))
+            logging.info("Results saved to CSV")
     
     def update_results_display(self, url_count, image_count):
         self.results_text.insert(tk.END, 
@@ -303,6 +312,7 @@ class WallpaperCrawler:
     
     def run(self):
         self.root.mainloop()
+        logging.info("GUI started")
 
 # Main execution
 if __name__ == "__main__":
